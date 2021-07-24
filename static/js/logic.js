@@ -1,6 +1,4 @@
 
-
-
 //Create tile layer using leaflet quick start guide and mapbox styles link
 const streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -79,13 +77,13 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_day.geojs
       case depth > 70:
         return "#fc8d59";
       case depth > 50:
-        return "#fee08b";
+        return "#fee090";
       case depth > 30:
         return "#ffffbf";
       case depth > 10:
-        return "#d9ef8b";
+        return "#e0f3f8";
       default:
-        return "#91cf60";
+        return "#91bfdb";
     }
   }
 
@@ -143,7 +141,7 @@ d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/
 });
 
 //add legend using sample from choropleth tutorial
-var legend = L.control({position: 'bottomright'});
+var legend = L.control({ position: 'bottomleft' });
 
 legend.onAdd = function (map) {
 
@@ -153,10 +151,10 @@ legend.onAdd = function (map) {
       //colors should match the order of the grades
       "#d73027",
       "#fc8d59",
-      "#fee08b",
+      "#fee090",
       "#ffffbf",
-      "#d9ef8b",
-      "#91cf60"
+      "#e0f3f8",
+      "#91bfdb"
     ];
 
   // loop through our density intervals and generate a label with a colored square for each interval
